@@ -6,7 +6,7 @@ RSpec.describe BaseCalculationRule do
 
   let(:base_price) { 100 }
 
-  it 'calculates #amount_per_position correctly' do
-    expect(subject.amount_per_position(3)).to eq base_price * 3
+  it 'calculates #cost correctly' do
+    expect(subject.cost(3)).to eq base_price * 3
   end
 end

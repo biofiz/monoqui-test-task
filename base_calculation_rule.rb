@@ -3,7 +3,7 @@ class BaseCalculationRule
     @base_price = base_price
   end
 
-  def amount_per_position(amount)
+  def cost(amount)
     @base_price * amount
   end
 end

@@ -11,10 +11,10 @@ RSpec.describe SpecialCalculationRule do
 
   before do
     allow_any_instance_of(BaseCalculationRule)
-      .to receive(:amount_per_position).and_return(base_cost)
+      .to receive(:cost).and_return(base_cost)
   end
 
-  it 'calculates #amount_per_position correctly' do
-    expect(subject.amount_per_position(4)).to eq discount_price + base_cost
+  it 'calculates #cost' do
+    expect(subject.cost(4)).to eq discount_price + base_cost
   end
 end

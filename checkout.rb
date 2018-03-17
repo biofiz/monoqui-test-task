@@ -23,7 +23,7 @@ class Checkout
   private
     def get_position_amount(product_name, product_quantity)
       return 0 if product_name.empty?
-      return @rules[product_name].amount_per_position(product_quantity) if @rules[product_name]
+      return @rules[product_name].cost(product_quantity) if @rules[product_name]
       raise "The product: #{product_name} was not found in the price list"
     end
 end

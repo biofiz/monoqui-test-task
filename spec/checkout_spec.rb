@@ -2,10 +2,10 @@ require_relative '../checkout'
 
 RSpec.describe Checkout do
   let(:special_calculation_rule) do
-    instance_double(SpecialCalculationRule, amount_per_position: amount)
+    instance_double(SpecialCalculationRule, cost: cost)
   end
 
-  let(:amount) { 50 }
+  let(:cost) { 50 }
 
   let(:rules) { { A: special_calculation_rule } }
 
@@ -53,7 +53,7 @@ RSpec.describe Checkout do
       let(:product_name) { 'A' }
 
       it 'returns a total price' do
-        expect(subject.total).to eq amount
+        expect(subject.total).to eq cost
       end
     end
   end
