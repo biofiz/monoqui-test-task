@@ -35,3 +35,8 @@ Then run tests
 ```bush
   rspec spec
 ```
+
+### Implementation considerations
+
+In my solution I used approach with classes: `BaseCalculationRule` and `SpecialCalculationRule`. `BaseCalculationRule` uses simple logic for coast calculation, just price * amount. `SpecialCalculationRule` is a child class with extended calculation logic. This approach allows us add additional rules easily.
+In my solution I used base OOP principles (such as inheritance) and used dependency injection in `Checkout` class. It gives us flexibility, so that we can add a new rule to any product easily, as soon as any Rule class implements the `cost` method.
